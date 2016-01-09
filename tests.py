@@ -238,8 +238,7 @@ class ExampleTest(unittest.TestCase):
         for x in test_list2:
             t.append(x)
 
-        l[0:2] = t
-        print str(l)
+        l[0:2] = t 
         self.assertEqual(14, len(l))
 
     def test_mul(self):
