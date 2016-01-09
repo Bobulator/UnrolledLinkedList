@@ -1,5 +1,5 @@
-__author__ = 'Your Name'
-__email__ = 'Your Email'
+__author__ = 'Chad'
+__email__ = 'chadsbacon@gmail.com'
 
 import unittest
 from unrolled_linked_list import UnrolledLinkedList
