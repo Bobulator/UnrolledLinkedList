@@ -139,16 +139,9 @@ class ExampleTest(unittest.TestCase):
         self.assertRaises(TypeError, l.__getitem__, '0')
         self.assertRaises(IndexError, l.__getitem__, 9)
         self.assertRaises(IndexError, l.__getitem__, -10)
-
-        self.assertEqual(8, l[8])
-        self.assertEqual(7, l[7])
-        self.assertEqual(6, l[6])
-        self.assertEqual(5, l[5])
-        self.assertEqual(4, l[4])
-        self.assertEqual(3, l[3])
-        self.assertEqual(2, l[2])
-        self.assertEqual(1, l[1])
-        self.assertEqual(0, l[0])
+        
+        for i in range(9):
+            self.assertEqual(i, l[i])
         self.assertEqual(8, l[-1])
         self.assertEqual(5, l[-4])
 
