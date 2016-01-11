@@ -239,7 +239,6 @@ class ExampleTest(unittest.TestCase):
             t.append(x)
 
         l[0:2] = t
-        print str(l)
         self.assertEqual(14, len(l))
 
     def test_mul(self):
@@ -357,6 +356,27 @@ class ExampleTest(unittest.TestCase):
         del l[4]
         del l[4]
         self.assertEqual('{[1, 3], [4, 5, 9]}', str(l))
+
+        l = UnrolledLinkedList(6)
+        for i in xrange(20):
+            l.append(i)
+        del l[4]
+        del l[-1]
+        self.assertEqual(18, len(l))
+        self.assertEqual(18, l[-1])
+        for i in reversed(xrange(5, 18)):
+            self.assertEqual(i+1, l[i])
+
+        l = UnrolledLinkedList(3)
+        for i in xrange(8):
+            l.append(i)
+        self.assertEqual(8, len(l))
+        del l[-1]
+        self.assertEqual(7, len(l))
+        self.assertEqual(6, l[6])
+        del l[-2]
+        self.assertEqual(6, len(l))
+        self.assertEqual(6, l[5])
 
     def test_delitem_slice(self):
         l = UnrolledLinkedList(4)

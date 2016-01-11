@@ -475,7 +475,7 @@ class UnrolledLinkedList(object):
     def __balance_node(self, prev_node, cur_node):
         """Balances a node that has its list less than half-full.
         """
-        if len(cur_node.data_list) == self.max_node_capacity / 2:
+        if len(cur_node.data_list) >= self.max_node_capacity / 2:
             return
 
         # node is empty?
